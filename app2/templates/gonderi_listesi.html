@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>	
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/blog_site.css' %}">
+	<title>Personal Blog</title>
+</head>
+
+<body>
+	<div>
+		<h1><a href=""><img src="https://www.livermoreschools.org/cms/lib/CA50000061/Centricity/Domain/72/Tech%20Graphic%20Blue%20and%20Gold.png" height="200" width="270" >Farasat's Personal Blog Site</a></h1>
+	
+	</div>
+	
+	<div class="content_container">
+		<div class="row">
+			<div class="col-md-8">
+				{% for gonderi in gonderiler %}
+				<div class="post">
+	
+					<h1><a href="">{{ gonderi.baslik }}</a></h1>
+	
+					<p>{{ gonderi.icerik|linebreaks }}</p>
+	
+					<div class="date">
+						<p>Published: {{ gonderi.y_tarihi }}</p>
+					</div>
+	
+					<a href="" class="tag">
+						<p>{{ gonderi.tag|linebreaks }}</p>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+	integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"crossorigin="anonymous"></script>
+</body>
+
+</html>
